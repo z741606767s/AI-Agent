@@ -1,7 +1,23 @@
-MNIST 手写数字识别
+# MNIST 手写数字识别
 
-mnist/
-├── train.py          # 训练模型
-├── model.h5          # 训练好的模型
-├── app.py            # 网页 Demo
-└── requirements.txt  # 依赖列表
+```text
+mnist-app/
+├── app.py              # 您的 Streamlit 应用
+├── train.py            # 训练脚本
+├── requirements.txt    # Python 依赖
+├── Dockerfile          # Docker 构建文件
+├── .dockerignore       # Docker 忽略文件
+└── mnist.h5            # 训练好的模型（运行 train.py 后生成）
+```
+
+## 构建 Docker 镜像
+
+```bash
+docker build -t mnist-app .
+```
+
+## 运行容器
+
+```bash
+docker run -p 8501:8501 mnist-app
+```

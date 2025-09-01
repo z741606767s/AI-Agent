@@ -20,7 +20,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 COPY . .
 
-RUN if [ ! -f "mnist.h5" ]; then \
+RUN if [ ! -f "model/mnist.h5" ]; then \
     echo "Training model..." && \
     python train.py; \
     else \

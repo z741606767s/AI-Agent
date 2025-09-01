@@ -9,12 +9,13 @@ import time
 
 # 设置TensorFlow日志级别以减少警告
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
 st.set_page_config(page_title="手写数字识别", page_icon="🔢", layout="wide")
 st.title("🔢 在线手写数字识别")
 
 # 检查模型文件是否存在
-model_path = "mnist.h5"
+model_path = f"model/mnist.h5"
 model = None
 
 if os.path.exists(model_path):

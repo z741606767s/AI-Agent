@@ -1,5 +1,9 @@
 # 使用官方 Python 运行时作为父镜像
-FROM python:3.9-slim
+FROM python:3.13-alpine
+
+# 设置环境变量以减少 TensorFlow 警告
+ENV TF_CPP_MIN_LOG_LEVEL=2
+ENV CUDA_VISIBLE_DEVICES=-1
 
 # 设置工作目录
 WORKDIR /app

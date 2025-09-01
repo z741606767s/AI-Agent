@@ -5,7 +5,7 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import matplotlib.pyplot as plt
 
 
-# 构建改进的模型
+# 构建模型
 def build_improved_model():
     model = models.Sequential([
         layers.Input(shape=(28, 28, 1)),
@@ -87,6 +87,8 @@ if __name__ == '__main__':
     print("模型已保存为 'mnist.h5'")
 
     # 绘制训练历史
+    plt.rcParams['font.sans-serif'] = ['SimHei']
+    plt.rcParams['axes.unicode_minus'] = False
     plt.figure(figsize=(12, 4))
     plt.subplot(1, 2, 1)
     plt.plot(history.history['accuracy'], label='训练准确率')

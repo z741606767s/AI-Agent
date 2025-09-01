@@ -1,5 +1,6 @@
 # MNIST 手写数字识别
 
+## 项目结构
 ```text
 mnist-app/
 ├── app.py              # 您的 Streamlit 应用
@@ -10,14 +11,14 @@ mnist-app/
 └── mnist.h5            # 训练好的模型（运行 train.py 后生成）
 ```
 
-## 构建 Docker 镜像
+## 安装依赖
 
 ```bash
-docker build -t mnist-app .
+pip install --no-cache-dir -r requirements.txt
 ```
 
-## 运行容器
+## 构建和运行容器
 
 ```bash
-docker run -p 8501:8501 mnist-app
+docker compose up -d --build
 ```
